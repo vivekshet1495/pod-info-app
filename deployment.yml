@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-info
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pod-info-label
+  template:
+    metadata:
+      name: pod-info-template
+      labels:
+        app: pod-info-label
+    spec:
+      containers:
+      - name: pod-info-container
+        image: godspeed95/new:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "250Mi"
+          limits:
+            cpu: "400m"
+            memory: "350Mi" 

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-info-service
+  namespace: pod-info
+spec:
+  selector:
+    app: pod-info-label   # must match your Deployment label
+  ports:
+    - protocol: TCP
+      port: 8080          # service port
+      targetPort: 8080    # container port
+  type: ClusterIP       # default
