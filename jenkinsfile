@@ -20,7 +20,7 @@ pipeline{
             steps{
                 sh '''docker build . -f Dockerfile -t godspeed95/new:latest
 		docker push godspeed95/new:latest
-		docker images prune -y'''
+		docker image prune -y'''
             }
         }
     }
