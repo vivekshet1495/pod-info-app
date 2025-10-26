@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    tools{
+        maven 'maven'
+    }
+    
+    stages{
+        stage("Clone"){
+            steps{
+                git branch: 'main', url: 'https://github.com/vivekshet1495/pod-info-app.git'
+            }
+        }
+        stage("Source Build"){
+            steps{
+		sh 'mvn -v'
+                sh 'mvn install'
+            }
+        } 
+        stage("Image build and push"){
+            steps{
+                sh ''
+            }
+        }
+    }
+}
