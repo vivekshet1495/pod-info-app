@@ -13,7 +13,7 @@ pipeline{
         stage("Source Build"){
             steps{
 		sh 'mvn -v'
-                sh 'mvn install'
+                sh 'mvn clean install -U -X'
             }
         } 
         stage("Image build and push"){
