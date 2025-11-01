@@ -35,7 +35,7 @@ jobs:
         name: app-war
         path: target/*.war
     - name: List files
-          run: ls -R target
+        run: ls -R target
 
 
 
